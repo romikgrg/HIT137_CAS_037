@@ -1,12 +1,1 @@
-import pandas as pd
-from transformers import AutoTokenizer
-from collections import Counter
 
-with open('output.txt', 'r') as file:
-    text = file.read()
-
-tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
-tokens = tokenizer.tokenize(text)
-counter = Counter(tokens)
-top_30_tokens = counter.most_common(30)
-print(top_30_tokens)
